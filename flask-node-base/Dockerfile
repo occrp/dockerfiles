@@ -9,6 +9,5 @@ RUN apt-get update -qq && apt-get install -y -q --no-install-recommends \
   && apt-get clean
 
 RUN curl -sL https://deb.nodesource.com/setup_5.x | bash -
-RUN apt-get install -y -q nodejs && curl -L https://www.npmjs.org/install.sh | sh
-RUN npm install -g bower uglifyjs
-
+RUN apt-get install -y -q nodejs && npm install -g bower uglifyjs
+RUN apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
